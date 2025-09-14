@@ -14,9 +14,15 @@ int main() {
     //     cout << "kelip 2 x " << i << " = " << kelipatan << endl;
     // }
 
-    if (27 % 3 == 0 ){
-        cout << "kelipatan";
-    }
+    // if (27 % 3 == 0 ){
+    //     cout << "kelipatan";
+    // }
+
+    int daun = 100;
+    int gugur = 0;
+    
+    daun -= gugur;
+    cout << gugur; 
 
 
 
