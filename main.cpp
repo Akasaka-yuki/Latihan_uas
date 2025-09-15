@@ -9,6 +9,7 @@ int main() {
     int jml_gugur = 0;
     int tumbuh = 0;
     int jml_tumbuh = 0;
+    int sudahcek = false;
     // int jumlah, maks;
     // int i;
 
@@ -48,39 +49,52 @@ int main() {
         // for(counter; counter <= daun; counter++ ){
             // cout << gugur << endl;
             // setiap 2 menit GUGUR 2 buah daun
-            if(counter == 0){
+            if((counter / 2)* 2 == counter){ 
                 gugur = 2;
-                tumbuh = 0;
-                // cout << "gugur" << gugur << endl; 
-                // cout << "menit 2 " << counter << endl; 
-                
-            }
+                if((counter / 3)* 3 == counter ){
+
+                    cout << "gugur" << gugur << endl; 
+                    cout << "menit - " << counter << endl; 
+                    gugur = gugur + 1;
+                    tumbuh = 0;
+                    sudahcek = true; // mengecek apakah angka yang di cek sudah dicek dengan dua kondisi
+                }
+            } 
             // setiap 3 menit GUGUR 1 buah daun
-            else if(counter == 3 ){
-                gugur = 1;
-                tumbuh = 0;
-                // cout << gugur << endl;
+            if((counter / 3)* 3 == counter ){
+                if(sudahcek == true){ // digunakan untuk angka yang sudah di cek 
+                    gugur = gugur;
+                } else {
+                    gugur = 1;
+                }
+                // tumbuh = 0;
+                // cout << "gugur" << gugur << endl; 
+                // cout << "menit - " << counter << endl; 
             }
             // setiap 5 menit GUGUR 3 buah daun
-            else if(counter == 5 ){
+            if((counter / 5)* 5 == counter ){
                 gugur = 3;
-                tumbuh = 0;
-                // cout << gugur << endl;
+                // tumbuh = 0;
+                // cout << "gugur " << gugur << endl; 
+                // cout << "menit - " << counter << endl; 
             }
             // setiap 4 menit TUMBUH 2 buah daun
-            else if(counter == 4 ){
+            if((counter / 4)* 4 == counter ){
                 tumbuh = 2;
-                gugur = 0;
+                // gugur = 0;
             }
             // setiap GUGUR 5 daun TUMBUH 1 buah daun
-            else if(gugur == 5 ){
-                tumbuh = 1;
-                gugur = 0;
+            if((jml_gugur / 5)* 5 == jml_gugur ){
+                // tumbuh = 1;
+                // gugur = 0;
+            // } else {
+            //     gugur = 0;
+            //     tumbuh = 0;
             }
             daun = daun - gugur; 
-            cout << "menit ke-" << counter << "  |  kec. angin  |   " << tumbuh << "    |   jml. tumbuh |   " << gugur << " |   jml.tumbuh  |   " << daun << endl;
+            cout << "menit ke-" << counter << "  |  kec. angin  |   " << tumbuh << "    |   jml. tumbuh |   " << gugur << " |   jml.gugur  |   " << daun << endl;
             
-            // counter++;
+            counter++;
         // }
 
         

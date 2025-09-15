@@ -18,11 +18,15 @@ int main() {
     //     cout << "kelipatan";
     // }
 
-    int daun = 100;
-    int gugur = 0;
-    
-    daun -= gugur;
-    cout << gugur; 
+   
+    int n;
+    std::cin >> n;
+    if ((n / 3) * 3 == n) 
+        std::cout << n << " kelipatan 3\n";
+    else 
+        std::cout << n << " bukan kelipatan 3\n";
+
+
 
 
 
