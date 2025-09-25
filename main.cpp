@@ -59,13 +59,22 @@ int main() {
                     tumbuh = 0;
                     sudahcek = true; // mengecek apakah angka yang di cek sudah dicek dengan dua kondisi
                 }
+                if((counter / 5)* 5 == counter ){
+                    gugur = gugur + 3;
+                    tumbuh = 0;
+                    sudahcek = true;
+                }
             } 
             // setiap 3 menit GUGUR 1 buah daun
             if((counter / 3)* 3 == counter ){
                 if(sudahcek == true){ // digunakan untuk angka yang sudah di cek 
+                    cout << "status " << sudahcek << endl;
                     gugur = gugur;
+                    sudahcek = false;
                 } else {
+                    cout << "status " << sudahcek << endl;
                     gugur = 1;
+
                 }
                 // tumbuh = 0;
                 // cout << "gugur" << gugur << endl; 
@@ -73,7 +82,13 @@ int main() {
             }
             // setiap 5 menit GUGUR 3 buah daun
             if((counter / 5)* 5 == counter ){
-                gugur = 3;
+                if(sudahcek == true){
+                    gugur = gugur;
+                    sudahcek == false;
+                } else {
+                    gugur = 3;
+
+                }
                 // tumbuh = 0;
                 // cout << "gugur " << gugur << endl; 
                 // cout << "menit - " << counter << endl; 
